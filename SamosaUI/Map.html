@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <style>
+        #map { width: 800px; height: 600px; }
+        .heading
+    {
+      background-color: chocolate;
+      padding:20px;
+      text-align: center;
+      margin:0px;
+      margin-bottom:50px;
+    }
+    .FloatRight
+    {
+      float:right;
+    }
+    .headerIcon
+    {
+      margin-top:-15px;
+
+    }
+    </style>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/heatmap.js/2.0.2/heatmap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-heatmap@1.0.0/leaflet-heatmap.js"></script>
+      </head>
+<body>
+    <h1 class="heading">
+        SaMoSa
+        <ul class="headerIcon nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-option-vertical"></span></a></li>
+        </ul>
+      </h1>
+  <div id="map"></div>
+  <script type="text/javascript">
+  /* axios.get('https://api.github.com/gists/a210c98011416e11a90a4adf00973c2e')
+    .then(response => {
+    
+      let sales = JSON.parse(response.data.files['federal_hill_sales.json'].content) */
+      let data = [{lat: 17.7288819, lng:83.3021684, count: 144 },
+                    {lat: 17.7344652, lng:83.293325, count: 204},
+                    {lat: 17.7427479, lng:83.3417589, count: 344},
+                    {lat:17.7084352, lng:83.2934044, count:500},
+                    {lat:31.6438943, lng:74.8744322,count:500}];
+      let sales = data
+      
+      // Create the base Leaflet layer (the map itself)
+      let baseLayer = L.tileLayer(
+        'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a>'
+        }
+      )
+  
+      // Configure and create the heatmap.js layer
+      let cfg = {
+        "radius": 40,
+        "useLocalExtrema": true,
+        valueField: 'count'
+      }
+  
+      let heatmapLayer = new HeatmapOverlay(cfg)
+  
+      // Determine min/max (from sales.js file) for the heatmap.js plugin
+      let min = Math.min(data.count)
+      let max = Math.max(data.count)
+  
+      // Create the overall Leaflet map using the two layers we created
+      let propertyHeatMap = new L.Map('map', {
+        center: new L.LatLng(31.6438943,74.8744322),
+        zoom: 13,
+        layers: [baseLayer, heatmapLayer]
+      })
+  
+      // Add data (from sales.js file) to the heatmap.js layer
+      heatmapLayer.setData({
+        min: min,
+        max: max,
+        data: sales
+      });
+    
+    
+   /*  })
+      .catch(error => {
+      console.log(error)
+    }) */
+    </script>
+
+</body>
+</html>

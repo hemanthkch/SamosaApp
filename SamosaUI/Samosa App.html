@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    .heading
+    {
+      background-color: chocolate;
+      padding:20px;
+      text-align: center;
+      margin:0px;
+      margin-bottom:50px;
+    }
+    .FloatRight
+    {
+      float:right;
+    }
+    .headerIcon
+    {
+      margin-top:-15px;
+
+    }
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 5px;
+
+}
+.card > hr {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  margin-top: -5px;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+
+  </style>
+</head>
+<body>
+<h1 class="heading">
+  SaMoSa
+  <ul class="headerIcon nav navbar-nav navbar-right">
+    <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+    <li><a href="#"><span class="glyphicon glyphicon-option-vertical"></span></a></li>
+  </ul>
+</h1>
+<div class="container-fluid text-center">  
+  <ul class="nav nav-tabs nav-justified" role="tablist">
+    <li class="active"><a href="#Govt">Government Officials</a></li>
+    <li><a href="#Citizens">Citizens</a></li>
+    <li><a href="#Vendors">Vendors</a></li>     
+  </ul>  
+  <div class="row content">
+    <!-- <div class="col-sm-2 sidenav">
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+      <p><a href="#">Link</a></p>
+    </div> -->
+    <div class="col-sm-8 text-left"> 
+      <div class="row">
+        <div class="card col-sm-4 box-shadow" ><img src="RiotPolice.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+        <div class="card-body">Crowd Control</div></div>
+        <div class="col-sm-4"><img src="AI.jpeg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+        AI Suggestions</div>
+        <div class="col-sm-4" onclick="javascript:window.location='map.html'"><img src="Map.png" class="img-thumbnail" alt="Cinque Terre" width="304" height="236">
+        Map data</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+</body>
+</html>
+
