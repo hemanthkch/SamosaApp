@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--
+Template Name: Gleblu
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>SSaPM</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+/* DEMO ONLY */
+.container .demo{text-align:center;}
+.container .demo div{padding:8px 0;}
+.container .demo div:nth-child(odd){color:#FFFFFF; background:#CCCCCC;}
+.container .demo div:nth-child(even){color:#FFFFFF; background:#979797;}
+@media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
+
+.gridContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 10% [col-start] 25%  25% [col-middle] 35% [col-end]); /*repeat(3, 1fr);*/
+  grid-template-rows: repeat(auto-fill, 50px);
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+}
+
+.gridContainer .item {
+  white-space: normal;
+}
+
+#introblocks .active .gridContainer i {
+  color:#FF3F4A;
+  background-color:#CCCCCC;
+  border-color:#CCCCCC;
+}
+
+.gridContainer a{
+  color: #FFFFFF;
+}
+
+.btn{
+    color: #FFFFFF;
+    background-color: #FF3F4A;
+    border-color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+#ancDiv{
+    border-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    width: 20%;
+    margin-left: 39.8%;
+    padding: 10px;
+}
+}
+
+#loading {
+    background: url('spinner.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
+
+nav{padding-top: 30px;} /*Paagination*/
+
+/* DEMO ONLY */
+</style>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!--<div class="wrapper row0">
+  <div id="topbar" class="hoc clear">
+    <div class="fl_left"> 
+      
+      <ul class="nospace">
+        <li><i class="fas fa-phone rgtspace-5"></i> +00 (123) 456 7890</li>
+        <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>
+      </ul>
+      
+    </div>
+    <div class="fl_right"> 
+      
+      <ul class="nospace">
+        <li><a href="../index.html" title="Home"><i class="fas fa-home"></i></a></li>
+        <li><a href="ManageSchedules.html" title="Manage Schedule"><i class="fas fa-calendar-alt"></i></a></li>
+        <li><a href="MonitorUsers.html" title="Monitor Users"><i class="fas fa-desktop"></i></a></li>
+        <li><a href="ImportData.html" title="Import User Data"><i class="fas fa-cloud-upload-alt"></i></a></li>
+      </ul>
+      
+    </div>
+  </div>
+</div>-->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!--<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left"> 
+      
+      <h1 style="text-align: center;"><a href="index.html">Smart Scheduling And Proximity Monitoring System (SSaPM)</a></h1>
+      
+    </div>
+  </header>
+</div>-->
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/44.jpg');">
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading">List of Users</h3>
+      <h5 id="classType"></h5>
+      <!--<footer>
+        <ul class="nospace inline pushright">
+          <li>a class="btn" href="#">Browse</a>
+            <form enctype="multipart/form-data" action="../Prototype_Site/layout/scripts/py_scripts/FileUpload.py" method="post">
+              <div class="upload-btn-wrapper">
+                <button class="btn">Browse</button>
+                <input type="file" name="myfile" />
+              </div>
+              input type="submit" value="Upload" />
+            </form>
+          </li>
+          <li><a class="btn inverse" href="#">Nunc molestie</a></li>
+        </ul>
+      </footer>-->
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+<div class="wrapper row4">
+  <section id="introblocks" class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace group">
+      <li>
+        <form name="foo" enctype="multipart/form-data">
+            <input type="filedata" style="display: none"/>
+        </form>
+        <article class="active"><a href="#"><i class="fas fa-users"></i></a>
+          <!--<button id="btnNotify" value="Notify" class="btn"></button>-->
+          <div id="ancDiv" style="margin-bottom: 30px;"><a id="aNotify" href="#">Notify</a></div>
+          <!-- <a id="aNotify" href="#" class="sp_notify_prompt">Notify</a> -->
+          
+
+          <div id="app" class="gridContainer">
+          </div>
+
+          <template id="item_template">
+            <div class="item" style="background: {{color}}">
+              {{#isFirstRow}}
+              <p>{{ num }}</p>
+              {{/isFirstRow}}
+              {{^isFirstRow}}
+              <p style="color: black">{{ num }}</p>
+              {{/isFirstRow}}
+              <!--<p>
+                <button class="del_el">Delete</button>
+              </p>-->
+            </div>
+          </template>
+          <!--<nav class="pagination">
+          <ul>
+            <li><a href="#">&laquo; Previous</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><strong>&hellip;</strong></li>
+            <li><a href="#">6</a></li>
+            <li class="current"><strong>7</strong></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><strong>&hellip;</strong></li>
+            <li><a href="#">14</a></li>
+            <li><a href="#">15</a></li>
+            <li><a href="#">Next &raquo;</a></li>
+          </ul>
+        </nav>-->
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+  <!--<footer id="footer" class="hoc clear"> 
+    <div class="one_quarter">
+      <h6 class="heading">Platea dictumst fusce</h6>
+      <ul class="nospace clear latestimg">
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+      </ul>
+    </div>
+  </footer>-->
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">IBM India Pvt. Ltd.</a></p>
+    <!--<p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>-->
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<input type="hidden" id="hdnSdate"/>
+<input type="hidden" id="hdnEdate"/>
+<input type="hidden" id="hdnMaxNo"/>
+<!-- JAVASCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="../scripts/jquery.backtotop.js"></script>
+<script src="../scripts/jquery.mobilemenu.js"></script>
+<script src="../scripts/Common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="../Uploaded_Files/data.js"></script>
+<script src="../scripts/userlist-script.js"></script>
+</body>
+</html>

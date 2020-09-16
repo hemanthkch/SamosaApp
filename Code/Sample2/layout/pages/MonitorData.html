@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>SSaPM</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<style type="text/css">
+/* DEMO ONLY */
+.container .demo{text-align:center;}
+.container .demo div{padding:8px 0;}
+.container .demo div:nth-child(odd){color:#FFFFFF; background:#CCCCCC;}
+.container .demo div:nth-child(even){color:#FFFFFF; background:#979797;}
+@media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
+
+.gridContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 50px);
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+}
+
+.container .item {
+}
+canvas{
+  height: 500px !important;
+}
+
+/* DEMO ONLY */
+</style>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear">
+    <div class="fl_left"> 
+      <!-- ################################################################################################ -->
+      <ul class="nospace">
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+    <div class="fl_right"> 
+      <!-- ################################################################################################ -->
+      <ul class="nospace">
+        <li><a href="/" title="Home"><i class="fas fa-home"></i></a></li>
+        <li><a href="ManageSchedules" title="Manage Schedule"><i class="fas fa-calendar-alt"></i></a></li>
+        <li><a href="#" title="Monitor Students"><i class="fas fa-desktop"></i></a></li>
+        <li><a href="ImportData" title="Import Student Data"><i class="fas fa-cloud-upload-alt"></i></a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left"> 
+      <!-- ################################################################################################ -->
+      <h1 style="text-align: center;"><a href="index.html">Smart Scheduling And Proximity Monitoring System (SSaPM)</a></h1>
+      <!-- ################################################################################################ -->
+    </div>
+  </header>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/backg4.png');">
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading">Monitor Students</h3>
+      <p></p>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+<div class="wrapper row4">
+  <section id="introblocks" class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace group">
+      <li>
+        <form name="foo" enctype="multipart/form-data">
+            <input type="filedata" style="display: none"/>
+        </form>
+        <article class="active"><a href="#"><i class="fas fa-desktop"></i></a>
+          <div id="wrapper">
+            <div class="flourish-embed flourish-network" data-src="visualisation/2815101" data-url="https://flo.uri.sh/visualisation/2815101/embed"></div>
+            <!-- <div id="mynetwork" witdh="100%" height="500px"></div>
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+
+
+          <!--<button id="add_el">Add element</button>-->
+
+          <template id="item_template">
+            <div class="item" style="background: {{color}}">
+              <p>{{ num }}</p>
+              <p>
+                <!--<button class="del_el">Delete</button>-->
+              </p>
+            </div>
+          </template>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">IBM India Pvt. Ltd.</a></p>
+    <!--<p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>-->
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<input type="hidden" id="hdnSdate"/>
+<input type="hidden" id="hdnEdate"/>
+<input type="hidden" id="hdnMaxNo"/>
+<!-- JAVASCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../scripts/jquery.backtotop.js"></script>
+<script src="../scripts/jquery.mobilemenu.js"></script>
+<script src="../scripts/Common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="../scripts/vis-network.min.js"></script>
+<!-- <script src="../scripts/WorldCup2014.js"></script> -->
+<script src="../scripts/StudentsGraph.js"></script>
+<script src="https://public.flourish.studio/resources/embed.js"></script>
+</body>
+</html>

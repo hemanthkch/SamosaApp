@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--
+Template Name: Gleblu
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>SSaPM</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css"
+rel="stylesheet" type="text/css" />
+<!-- Google web fonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
+
+<!-- The main CSS file -->
+<link href="../styles/uploadStyle.css" rel="stylesheet" />
+<style type="text/css">
+/* DEMO ONLY */
+.container .demo{text-align:center;}
+.container .demo div{padding:8px 0;}
+.container .demo div:nth-child(odd){color:#FFFFFF; background:#CCCCCC;}
+.container .demo div:nth-child(even){color:#FFFFFF; background:#979797;}
+@media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
+/* ManageSchedule Style */
+.gridContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fill, 50px);
+  grid-row-gap: 1em;
+  grid-column-gap: 1em;
+}
+
+.container .item {
+}
+
+label{text-align: left;}
+input[type="text"]{color: black; padding: 8px; border: 1px solid; width: 100%;}
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: .8em;
+}
+
+.ui-widget-content {
+    background: #F9F9F9;
+    border: 1px solid #90d93f;
+    color: #222222;
+}
+
+
+/* DEMO ONLY */
+</style>
+</head>
+<body id="top">
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear">
+    <div class="fl_left"> 
+      <!-- ################################################################################################ -->
+      <ul class="nospace">
+        <!--<li><i class="fas fa-phone rgtspace-5"></i> +00 (123) 456 7890</li>
+        <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>-->
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+    <div style="text-align: center"> 
+      <!-- ################################################################################################ -->
+      <ul class="nospace">
+        <li><a href="/" title="Home"><i class="fas fa-home"></i></a></li>
+        <li><a href="ManageSchedules" title="Manage Schedule"><i class="fas fa-calendar-alt"></i></a></li>
+        <li><a href="MonitorUsers" title="Monitor Users"><i class="fas fa-desktop"></i></a></li>
+        <li><a href="#" title="Import User Data"><i class="fas fa-cloud-upload-alt"></i></a></li>
+      </ul>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left"> 
+      <!-- ################################################################################################ -->
+      <h1 style="text-align: center;"><a href="index.html">Smart Scheduling And Proximity Monitoring System (SSaPM)</a></h1>
+      <!-- ################################################################################################ -->
+    </div>
+  </header>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('../images/demo/backgrounds/backg3.jpg');">
+  <div id="pageintro" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading">Import User Data</h3>
+      <p></p>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+<div class="wrapper row4">
+  <section id="introblocks" class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <ul class="nospace group">
+      <li>
+        <article class="active"><a href="#"><i class="fas fa-cloud-upload-alt"></i></a>
+          <div class="one_third first">
+            <label for="StartDate">Start Date <span>*</span></label>
+            <input type="date" name="StartDate" id="StartDate" value="" size="22" required>
+          </div>
+          <div class="one_third">
+            <label for="EndDate">End Date <span>*</span></label>
+            <input type="date" name="EndDate" id="EndDate" value="" size="22" required>
+          </div>
+          <div class="one_third">
+            <label for="url" tooltip="Max number users a room can accomodate">Section Size <span>*</span></label>
+            <input type="text" name="maxStudent" id="maxStudent" value="10" size="22">
+          </div>
+          <form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+            <div id="drop">
+              <a>Browse</a>
+              <input type="file" name="upl" id="filedata" multiple />
+            </div>
+
+            <ul>
+              <!-- The file uploads will be shown here -->
+            </ul>
+
+          </form>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </section>
+  <!--<footer id="footer" class="hoc clear"> 
+    <div class="one_quarter">
+      <h6 class="heading">Platea dictumst fusce</h6>
+      <ul class="nospace clear latestimg">
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+        <li><a class="imgover" href="#"><img src="../images/demo/100x100.png" alt=""></a></li>
+      </ul>
+    </div>
+  </footer>-->
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2020 - All Rights Reserved - <a href="#">IBM India Pvt. Ltd.</a></p>
+    <!--<p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>-->
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<!-- JAVASCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.7/xlsx.core.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xls/0.7.4-a/xls.core.min.js"></script>
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="../scripts/jquery.backtotop.js"></script>
+<script src="../scripts/jquery.mobilemenu.js"></script>
+<!--<script src="../layout/scripts/Common.js"></script>-->
+<!-- JavaScript Includes -->
+
+<script src="../scripts/jquery.knob.js"></script>
+
+<!-- jQuery File Upload Dependencies -->
+<script src="../scripts/jquery.ui.widget.js"></script>
+<script src="../scripts/jquery.iframe-transport.js"></script>
+<script src="../scripts/jquery.fileupload.js"></script>
+
+<!-- Our main JS file -->
+<script src="../scripts/import-script.js"></script>
+</body>
+</html>
